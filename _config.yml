@@ -1,0 +1,19 @@
+nav_links:
+  - title: "Home"
+    url: /
+  - title: "About GGBI"
+    url: /about-ggbi
+  - title: "Green"
+    url: /green
+  - title: "Grey"
+    url: /grey
+  - title: "Blue"
+    url: /blue
+  - title: "Intelligent"
+    url: /intelligent
+  - title: "Applications"
+    url: /applications
+  - title: "Publications"
+    url: /publications
+  - title: "Contact"
+    url: /contact
