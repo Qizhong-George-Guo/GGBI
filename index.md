@@ -31,7 +31,7 @@ It emphasizes:
 - Adaptation under climate variability and change  
 - Solutions rooted in both engineering and natural processes  
 
-[Learn more →](/framework){:.button-link}
+[Learn more →](/about-ggbi){:.button-link}
 
 ---
 
