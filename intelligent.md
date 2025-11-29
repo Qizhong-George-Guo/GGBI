@@ -61,6 +61,7 @@ Intelligence serves as the unifying analytical layer, enabling cities and waters
 
 ## A Forward-Looking Domain
 
-As climate extremes intensify, data grow richer, and AI advances rapidly, intelligent systems become central to future water and urban management.  
+As climate extremes intensify, data sources expand, and computational methods advance rapidly, intelligent systems are becoming central to water and urban management.  
 
-This domain reflects the evolution of both the field — and your own scholarship — toward integrated, computationally empowered solutions for the challenges of today and the uncertainties of tomorrow.
+This domain equips communities, planners, and engineers with the tools needed to understand changing conditions, anticipate risks, and support adaptive, resilient decision-making.
+
