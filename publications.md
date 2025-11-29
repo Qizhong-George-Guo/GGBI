@@ -11,8 +11,7 @@ This page highlights a small number of publications and technical reports that r
 
 A complete list of publications, technical reports, and media engagements can be found on the faculty website:
 
-➡ **Full Publication List → https://www.qizhong-guo.org/publications**  
-*(or wherever your faculty site will host the full set)*
+➡ [Full Publication List →](https://qizhong-guo.org/publications)
 
 ---
 
