@@ -54,10 +54,10 @@ Lecture materials, conceptual illustrations, and AI-assisted educational content
 
 ---
 
-## For the Complete Record
+## Complete Record
 
-For a full and authoritative list of academic publications, reports, and scholarly output, please visit:
+For a full and complete list of academic publications, reports, and related scholarly work, please visit:
 
-➡ **Faculty Website: https://www.qizhong-guo.org**
+➡ [Faculty Website →](https://qizhong-guo.org)
 
-This ensures that **GGBI.ai** remains focused on the evolution, structure, and application of the GGBI Framework, while the faculty site provides the comprehensive scholarly context behind it.
+This keeps GGBI.ai focused on the evolution, structure, and application of the GGBI Framework, while the faculty site provides broader professional and academic context.
