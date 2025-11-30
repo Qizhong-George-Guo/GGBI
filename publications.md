@@ -54,10 +54,10 @@ Lecture materials, conceptual illustrations, and AI-assisted educational content
 
 ---
 
-## Complete Record
+## Full Publication Record
 
-For a full and complete list of academic publications, reports, and related scholarly work, please visit:
+For a complete and comprehensive list of publications, technical reports, presentations, and other scholarly output, please refer to the **Publications & Reports** section of my faculty website:
 
-➡ [Faculty Website →](https://qizhong-guo.org)
+➡ [Faculty Website →](https://qizhong-guo.org/publications)
 
-This keeps GGBI.ai focused on the evolution, structure, and application of the GGBI Framework, while the faculty site provides broader professional and academic context.
+The GGBI.ai site includes only a selected subset of works most relevant to the Green–Grey–Blue–Intelligent Framework. This approach keeps GGBI.ai focused on the evolution, structure, and application of the GGBI Framework, while the faculty site provides the broader academic and professional context.
