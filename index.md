@@ -1,100 +1,388 @@
----
-layout: home
-title: "GGBI Framework"
-subtitle: "Green–Grey–Blue–Intelligent Infrastructure for Resilient Water & Urban Systems"
-description: "The GGBI Framework: An integrated approach connecting green, grey, blue, and intelligent infrastructure & systems to advance resilience, sustainability, and equity in water and urban environments."
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GGBI – Green–Grey–Blue–Intelligent Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-# Green–Grey–Blue–Intelligent (GGBI) Framework  
-### Integrated Infrastructure & Systems for a Changing World
+  <meta name="description"
+        content="GGBI – the Green–Grey–Blue–Intelligent Framework for integrated water and urban systems, introduced by Professor Qizhong (George) Guo. It connects ecological, engineered, aquatic, and intelligent infrastructure for resilient cities, watersheds, and coasts." />
 
-The **GGBI Framework** brings together four foundational components of water and urban systems:
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-- **Green infrastructure** – ecological and nature-based solutions  
-- **Grey infrastructure** – engineered and structural systems  
-- **Blue infrastructure** – rivers, coasts, estuaries, and aquatic systems  
-- **Intelligent infrastructure & systems** – sensing, analytics, modeling, and AI-driven decision support  
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
 
-Together, these components provide a comprehensive foundation for **resilient, sustainable, and adaptive** cities, watersheds, and coastal environments.
+    * { box-sizing: border-box; }
 
----
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
 
-## What is the GGBI Framework?
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-The GGBI Framework integrates **ecological**, **engineered**, **hydrologic**, and **intelligent** systems to address the full complexity of water challenges — from urban stormwater and flood mitigation to watershed resilience, estuarine processes, and coastal dynamics.
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-It emphasizes:
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
 
-- System-scale understanding  
-- Data-informed decision-making  
-- Multi-infrastructure synergy  
-- Adaptation under climate variability and change  
-- Solutions rooted in both engineering and natural processes  
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
 
-[Learn more →](/about-ggbi){:.button-link}
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
 
----
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
 
-## The Four Infrastructure Domains
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
 
-### **Green Infrastructure**
-Nature-based solutions for infiltration, storage, habitat, and co-benefits.  
-[Explore →](/green){:.button-link}
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
 
-### **Grey Infrastructure**
-Engineered systems for conveyance, protection, and control.  
-[Explore →](/grey){:.button-link}
+    .hero-title {
+      font-size: clamp(2rem, 3.8vw, 2.6rem);
+      line-height: 1.2;
+      margin: 0 0 0.6rem;
+    }
 
-### **Blue Infrastructure**
-Rivers, estuaries, coastlines, and open water systems.  
-[Explore →](/blue){:.button-link}
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.85rem;
+    }
 
-### **Intelligent Infrastructure & Systems**
-Monitoring, modeling, analytics, optimization, and AI for adaptive management.  
-[Explore →](/intelligent){:.button-link}
+    .hero-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 1.4rem;
+    }
 
----
+    .pill-row {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
 
-## Why GGBI?
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
 
-Rapid urbanization, climate change, extreme weather, and aging infrastructure require solutions that transcend traditional categories. **GGBI** provides a unified lens to:
+    .section {
+      margin-top: 2.2rem;
+    }
 
-- Understand cross-infrastructure interactions  
-- Integrate green, grey, and blue systems  
-- Incorporate intelligence into design and operation  
-- Support planning across watersheds, coasts, and cities  
-- Build long-term resilience and sustainability  
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.9rem;
+    }
 
----
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
 
-## Applications
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1.2rem 1.3rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: block;
+    }
 
-The GGBI Framework supports applications across:
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-decoration: none;
+    }
 
-- Urban stormwater and green stormwater infrastructure  
-- Watershed and basin-scale planning  
-- Estuarine and coastal processes  
-- Flood resilience (pluvial, fluvial, coastal)  
-- Sediment transport and water quality  
-- Climate adaptation and nature-based solutions  
-- Intelligent monitoring and modeling systems  
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.1rem;
+    }
 
-[View Applications →](/applications){:.button-link}
+    .card p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
 
----
+    .card-pills {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
 
-## Publications & Technical Resources
+    .card-pill {
+      font-size: 0.75rem;
+      padding: 0.14rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: #f9fafb;
+      color: var(--muted);
+      white-space: nowrap;
+    }
 
-Selected academic publications, reports, and instructional materials related to GGBI and its component domains.
+    .note-box {
+      margin-top: 1.4rem;
+      padding: 0.8rem 0.9rem;
+      border-radius: 0.75rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
 
-[Visit Publications →](/publications){:.button-link}
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.5rem;
+    }
 
----
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
 
-## About This Site
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
 
-This website provides an introduction to the GGBI Framework and a synthesis of related scholarly work, teaching materials, conceptual models, and system-scale thinking.
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/" class="active">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
 
-It serves as an evolving, open resource for students, researchers, practitioners, and policy communities interested in integrated water and urban systems.
+<main>
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">GGBI Framework</div>
+    <h1 class="hero-title">Green–Grey–Blue–Intelligent (GGBI) Framework</h1>
+    <p class="hero-subtitle">
+      A systems framework for integrating ecological, engineered, aquatic, and intelligent
+      components of water and urban environments — from urban stormwater and watersheds
+      to estuaries, coasts, and multi-hazard resilience.
+    </p>
+    <p class="hero-meta">
+      Developed by Professor Qizhong (George) Guo,  
+      Department of Civil &amp; Environmental Engineering,  
+      Rutgers University–New Brunswick, New Jersey, U.S.A.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Green infrastructure</span>
+      <span class="pill">Grey infrastructure</span>
+      <span class="pill">Blue systems</span>
+      <span class="pill">Intelligent systems</span>
+      <span class="pill">Stormwater</span>
+      <span class="pill">Watersheds</span>
+      <span class="pill">Estuaries &amp; coasts</span>
+      <span class="pill">Flood resilience</span>
+    </div>
+  </section>
 
-[Contact →](/contact){:.button-link}
+  <!-- What is GGBI? / Core cards -->
+  <section class="section">
+    <h2>What is the GGBI Framework?</h2>
+    <p>
+      The Green–Grey–Blue–Intelligent (GGBI) Framework organizes how we think about water and
+      urban systems by recognizing four interacting domains:
+      <strong>green infrastructure</strong>, <strong>grey infrastructure</strong>,
+      <strong>blue systems</strong> (rivers, estuaries, coasts), and an
+      <strong>intelligent layer</strong> that connects data, models, AI tools, institutions,
+      and communities.
+    </p>
+    <p>
+      GGBI is not a single model or tool. It is a way to structure problems, connect
+      scales, and design portfolios of solutions that combine ecological, engineered,
+      aquatic, and intelligent elements.
+    </p>
+
+    <div class="grid" style="margin-top:1.4rem;">
+      <!-- Framework -->
+      <a class="card" href="/framework/">
+        <h3>The Framework</h3>
+        <p>
+          Core concepts, definitions, and diagrams describing the four domains
+          of the GGBI Framework and how they interact across scales.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Green–Grey–Blue–Intelligent</span>
+          <span class="card-pill">System thinking</span>
+        </div>
+      </a>
+
+      <!-- Four Domains -->
+      <a class="card" href="/framework/">
+        <h3>The Four Domains</h3>
+        <p>
+          Green, Grey, Blue, and Intelligent: ecological systems, engineered
+          infrastructure, aquatic systems, and the intelligent layer that
+          integrates data, models, and institutional knowledge.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Green</span>
+          <span class="card-pill">Grey</span>
+          <span class="card-pill">Blue</span>
+          <span class="card-pill">Intelligent</span>
+        </div>
+      </a>
+
+      <!-- Applications -->
+      <a class="card" href="/applications/">
+        <h3>Applications</h3>
+        <p>
+          Urban stormwater, watershed and basin-scale planning, estuarine and
+          coastal processes, flood resilience, climate adaptation, and
+          intelligent monitoring and modeling systems.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Stormwater</span>
+          <span class="card-pill">Watersheds</span>
+          <span class="card-pill">Estuaries &amp; coasts</span>
+          <span class="card-pill">Multi-hazard risk</span>
+        </div>
+      </a>
+
+      <!-- Resources -->
+      <a class="card" href="/resources/">
+        <h3>Publications &amp; Resources</h3>
+        <p>
+          Selected academic publications, technical reports, teaching materials,
+          and conceptual diagrams related to the GGBI Framework and its domains.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Publications</span>
+          <span class="card-pill">Technical reports</span>
+          <span class="card-pill">Teaching</span>
+        </div>
+      </a>
+
+      <!-- About the Site -->
+      <a class="card" href="/about/">
+        <h3>About This Site</h3>
+        <p>
+          Background on the development of the GGBI Framework and how this site
+          synthesizes research, teaching, and practice across water and urban systems.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Conceptual synthesis</span>
+          <span class="card-pill">Education</span>
+        </div>
+      </a>
+
+      <!-- Founder -->
+      <a class="card" href="/founder/">
+        <h3>Founder</h3>
+        <p>
+          Information about Professor Qizhong (George) Guo and the broader body of
+          work that informs the GGBI Framework.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Academic profile</span>
+          <span class="card-pill">Long-term work</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="note-box">
+      The GGBI Framework is intended as an evolving, open structure. As additional
+      case studies, tools, and teaching materials are added, this site will serve
+      as a living archive for students, researchers, practitioners, and policy
+      communities working on integrated water and urban systems.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
