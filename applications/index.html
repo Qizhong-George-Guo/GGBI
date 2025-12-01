@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Applications – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Applications of the Green–Grey–Blue–Intelligent (GGBI) Framework across urban stormwater, watersheds, estuaries and coasts, flood resilience, and data- and model-based decision support." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3.4vw, 2.4rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1.1rem 1.2rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-decoration: none;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .card-pills {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .card-pill {
+      font-size: 0.75rem;
+      padding: 0.14rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: #f9fafb;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 1.4rem;
+      padding: 0.9rem 1rem;
+      border-radius: 0.75rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/" class="active">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <span>Applications</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Applications</div>
+    <h1 class="hero-title">Applications of the GGBI Framework</h1>
+    <p class="hero-subtitle">
+      The Green–Grey–Blue–Intelligent (GGBI) Framework can be applied across a range of
+      water and urban challenges. This section summarizes key application areas and links
+      to pages where examples, concepts, and related materials are organized.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Urban stormwater</span>
+      <span class="pill">Watersheds &amp; basins</span>
+      <span class="pill">Estuaries &amp; coasts</span>
+      <span class="pill">Flood resilience</span>
+      <span class="pill">Data &amp; models</span>
+      <span class="pill">Intelligent tools</span>
+    </div>
+  </section>
+
+  <!-- Overview of why applications matter -->
+  <section class="section">
+    <h2>Why Organize Applications Around GGBI?</h2>
+    <p>
+      Many water and urban challenges span multiple domains: rainfall–runoff processes,
+      drainage networks, rivers, estuaries, coasts, and the institutions that manage them.
+      The GGBI Framework offers a way to:
+    </p>
+    <ul>
+      <li>Identify which Green, Grey, Blue, and Intelligent elements are most relevant.</li>
+      <li>Clarify how local interventions connect to larger-scale responses.</li>
+      <li>Evaluate portfolios of measures rather than isolated projects.</li>
+      <li>Link research, modeling, and teaching materials to real-world problems.</li>
+    </ul>
+    <p>
+      The applications on this site draw on examples from urban stormwater management,
+      watershed and basin-scale studies, estuarine and coastal processes, flood resilience,
+      and data- and model-based decision support.
+    </p>
+  </section>
+
+  <!-- Application cards -->
+  <section class="section">
+    <h2>Key Application Areas</h2>
+    <div class="grid">
+      <!-- Urban Stormwater -->
+      <a class="card" href="/applications/urban-stormwater.html">
+        <h3>Urban Stormwater &amp; Green Stormwater Infrastructure</h3>
+        <p>
+          Application of the GGBI Framework to rainfall–runoff processes, green
+          infrastructure performance, drainage networks, and urban flood mitigation.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Green &amp; Grey</span>
+          <span class="card-pill">Runoff &amp; storage</span>
+        </div>
+      </a>
+
+      <!-- Watersheds -->
+      <a class="card" href="/applications/watersheds.html">
+        <h3>Watersheds &amp; Basin-Scale Planning</h3>
+        <p>
+          Watershed and basin-scale perspectives that link upland measures, river systems,
+          and downstream estuarine and coastal environments, including resilience planning.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Catchments</span>
+          <span class="card-pill">River systems</span>
+        </div>
+      </a>
+
+      <!-- Estuaries & Coasts -->
+      <a class="card" href="/applications/estuaries-coasts.html">
+        <h3>Estuaries &amp; Coasts</h3>
+        <p>
+          Applications focused on tidal motion, storm surge, waves, salinity, wetlands,
+          and coastal protection, and how they are influenced by both inland and coastal
+          interventions.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Tides &amp; surge</span>
+          <span class="card-pill">Coastal dynamics</span>
+        </div>
+      </a>
+
+      <!-- Flood Resilience -->
+      <a class="card" href="/applications/flood-resilience.html">
+        <h3>Flood Resilience (Pluvial–Fluvial–Coastal)</h3>
+        <p>
+          Multi-hazard perspectives that consider intense rainfall, river flooding, and
+          coastal events together, including combinations of Green, Grey, Blue, and
+          Intelligent measures.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Multi-hazard</span>
+          <span class="card-pill">Risk &amp; adaptation</span>
+        </div>
+      </a>
+
+      <!-- Data, Models & Intelligent Tools -->
+      <a class="card" href="/applications/data-models-intelligence.html">
+        <h3>Data, Models &amp; Intelligent Tools</h3>
+        <p>
+          Use of monitoring, hydrologic and hydrodynamic models, and emerging AI-supported
+          tools to analyze, visualize, and communicate behaviors across GGBI domains.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Monitoring</span>
+          <span class="card-pill">Modeling &amp; AI</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="note-box">
+      Each application page can be expanded over time to include brief case summaries,
+      conceptual diagrams, links to publications and reports, and selected teaching
+      materials related to that topic.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
