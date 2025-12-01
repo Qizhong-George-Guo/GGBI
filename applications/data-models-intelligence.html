@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data, Models &amp; Intelligent Tools – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Data, models, and intelligent tools within the Green–Grey–Blue–Intelligent (GGBI) Framework: monitoring, hydrologic and hydrodynamic modeling, scenario analysis, and emerging AI-supported methods for water and urban resilience." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #7c3aed;      /* purple accent for Intelligent / tools */
+      --accent-soft: #ede9fe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #6d28d9;
+      border: 1px solid #ddd6fe;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.1rem;
+    }
+
+    .section h2 {
+      font-size: 1.32rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin: 0 0 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.1rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      font-size: 0.9rem;
+      color: #4c1d95;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.6rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/" class="active">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/applications/">Applications</a> &raquo;
+    <span>Data, Models &amp; Intelligent Tools</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Data &amp; Intelligence</div>
+    <h1 class="hero-title">Data, Models &amp; Intelligent Tools</h1>
+    <p class="hero-subtitle">
+      Observations, models, and emerging AI-supported tools provide a crucial layer of
+      “intelligence” for the Green–Grey–Blue–Intelligent (GGBI) Framework. They help us
+      interpret how Green, Grey, and Blue elements behave, evaluate options, and
+      communicate complex ideas to decision-makers, students, and the public.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Monitoring</span>
+      <span class="pill">Hydrologic &amp; hydraulic models</span>
+      <span class="pill">Hydrodynamic &amp; coastal models</span>
+      <span class="pill">Scenario analysis</span>
+      <span class="pill">Decision support</span>
+      <span class="pill">AI &amp; knowledge distillation</span>
+    </div>
+  </section>
+
+  <!-- Role of data and models -->
+  <section class="section">
+    <h2>Why Data and Models Matter in GGBI</h2>
+    <p>
+      Engineering decisions about Green, Grey, and Blue infrastructure often rely on
+      understanding how water moves and how systems respond to different conditions.
+      Data and models help to:
+    </p>
+    <ul>
+      <li>Quantify rainfall–runoff and drainage behavior.</li>
+      <li>Evaluate river, estuary, and coastal water levels and flows.</li>
+      <li>Simulate how infrastructure performs under current and future scenarios.</li>
+      <li>Explore “what-if” questions before investments are made.</li>
+      <li>Support communication among engineers, planners, and communities.</li>
+    </ul>
+    <p>
+      In the GGBI Framework, data and models are part of the Intelligent domain that
+      supports more transparent and robust decisions.
+    </p>
+  </section>
+
+  <!-- Representative tools -->
+  <section class="section">
+    <h2>Representative Types of Data and Models</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Monitoring &amp; Observations</h3>
+        <p>
+          Rain gauges, stream gauges, tide and surge sensors, water-quality measurements,
+          and remote sensing data that capture how systems behave in real events.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Hydrologic &amp; Hydraulic Models</h3>
+        <p>
+          Tools for representing rainfall–runoff, urban drainage networks, and river
+          flows, used in stormwater design, flood analysis, and GI–Grey evaluations.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Hydrodynamic &amp; Coastal Models</h3>
+        <p>
+          Models of tides, storm surge, waves, salinity, and sediment processes, used
+          to analyze estuarine circulation, coastal flooding, and shoreline change.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Water-Quality &amp; Sediment Models</h3>
+        <p>
+          Models that link land use, flows, and constituent transport to downstream
+          conditions in rivers, lakes, estuaries, and coasts.
+        </p>
+      </div>
+    </div>
+    <div class="note-box">
+      Regardless of the specific software or platform, the emphasis in the GGBI Framework
+      is on using data and models in ways that are physically grounded, transparent, and
+      helpful for decision-making and education.
+    </div>
+  </section>
+
+  <!-- Intelligent / AI-supported tools -->
+  <section class="section">
+    <h2>Emerging Intelligent &amp; AI-Supported Tools</h2>
+    <p>
+      In addition to traditional models, new tools are becoming available that can assist
+      with:
+    </p>
+    <ul>
+      <li>Summarizing technical documents and organizing case studies.</li>
+      <li>Generating visual explanations and diagrams for teaching.</li>
+      <li>Exploring scenarios and sensitivities in an interactive way.</li>
+      <li>Helping compare alternative portfolios of measures at a high level.</li>
+      <li>Translating technical material into more accessible formats for broader audiences.</li>
+    </ul>
+    <p>
+      These tools do not replace engineering judgment or detailed modeling. Instead, they
+      can complement established methods by improving synthesis, communication, and
+      accessibility of knowledge.
+    </p>
+  </section>
+
+  <!-- Connecting back to G/Grey/Blue -->
+  <section class="section">
+    <h2>Connecting Data &amp; Models to Green, Grey, and Blue Domains</h2>
+    <p>
+      Within the GGBI Framework, data and models are used to understand and connect:
+    </p>
+    <ul>
+      <li>
+        <strong>Green:</strong> how GI and landscape measures change runoff, peak flows,
+        water quality, and microclimate.
+      </li>
+      <li>
+        <strong>Grey:</strong> how drainage networks, storage facilities, levees, and
+        coastal structures perform under different storms and sea levels.
+      </li>
+      <li>
+        <strong>Blue:</strong> how rivers, estuaries, and coasts respond to combined
+        riverine, tidal, surge, and wave forcing.
+      </li>
+    </ul>
+    <p>
+      By linking these domains, data and models help identify where measures reinforce
+      one another and where additional adjustments may be needed.
+    </p>
+  </section>
+
+  <!-- Use cases / applications -->
+  <section class="section">
+    <h2>Typical Use Cases in GGBI Applications</h2>
+    <ul>
+      <li>Evaluating GI–Grey combinations for urban stormwater and local flooding.</li>
+      <li>Assessing basin-scale flood risks and environmental flows.</li>
+      <li>Analyzing storm-surge and coastal flooding under different storm tracks.</li>
+      <li>Exploring salinity intrusion or water-quality responses to management actions.</li>
+      <li>Supporting long-term resilience planning under climate and land-use change.</li>
+    </ul>
+    <p>
+      These use cases can draw on both conventional modeling tools and emerging
+      AI-assisted methods for analysis and communication.
+    </p>
+  </section>
+
+  <!-- Connections -->
+  <section class="section">
+    <h2>Connections to GGBI Framework Domains</h2>
+    <ul>
+      <li><a href="/framework/intelligent/">Intelligent domain</a> – concept of the Intelligent layer</li>
+      <li><a href="/framework/green/">Green domain</a> – GI performance and design</li>
+      <li><a href="/framework/grey/">Grey domain</a> – drainage, storage, and coastal structures</li>
+      <li><a href="/framework/blue/">Blue domain</a> – hydrodynamics and coastal processes</li>
+    </ul>
+  </section>
+
+  <!-- Related applications -->
+  <section class="section">
+    <h2>Related Applications on This Site</h2>
+    <ul>
+      <li><a href="/applications/urban-stormwater.html">Urban stormwater &amp; GI</a></li>
+      <li><a href="/applications/watersheds.html">Watersheds &amp; basin-scale planning</a></li>
+      <li><a href="/applications/estuaries-coasts.html">Estuaries &amp; coasts</a></li>
+      <li><a href="/applications/flood-resilience.html">Flood resilience (pluvial–fluvial–coastal)</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
