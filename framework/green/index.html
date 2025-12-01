@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Green Infrastructure – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Green infrastructure within the Green–Grey–Blue–Intelligent (GGBI) Framework: nature-based and ecological measures that support infiltration, storage, evapotranspiration, habitat, and co-benefits in water and urban environments." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #16a34a;      /* slightly greener accent on this page */
+      --accent-soft: #dcfce7;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.1rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin-top: 0.1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.2rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      font-size: 0.9rem;
+      color: #166534;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/" class="active">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/framework/">Framework</a> &raquo;
+    <span>Green Infrastructure</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Green Domain</div>
+    <h1 class="hero-title">Green Infrastructure in the GGBI Framework</h1>
+    <p class="hero-subtitle">
+      In the Green–Grey–Blue–Intelligent (GGBI) Framework, the <strong>Green</strong> domain
+      represents ecological and nature-based components that manage water through
+      infiltration, storage, evapotranspiration, and landscape processes. Green infrastructure
+      helps reduce runoff, support ecosystems, and provide co-benefits in urban and
+      watershed environments.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Green infrastructure</span>
+      <span class="pill">Rainfall–runoff</span>
+      <span class="pill">Permeable surfaces</span>
+      <span class="pill">Green roofs</span>
+      <span class="pill">Rain gardens &amp; bioretention</span>
+      <span class="pill">Sponge city concepts</span>
+    </div>
+  </section>
+
+  <!-- Role & functions -->
+  <section class="section">
+    <h2>Role of Green Infrastructure</h2>
+    <p>
+      Green infrastructure is often the first line of interaction between rainfall and the
+      built environment. It modifies how water enters and moves through a catchment, providing
+      opportunities to:
+    </p>
+    <ul>
+      <li>Intercept, store, and infiltrate rainfall before it becomes runoff.</li>
+      <li>Reduce peak flows, runoff volumes, and pollutant loads reaching grey systems.</li>
+      <li>Support evapotranspiration and microclimate regulation (e.g., on green roofs).</li>
+      <li>Enhance habitat, biodiversity, and visual/amenity value.</li>
+      <li>Contribute to sponge-city, low-impact development, and nature-based strategies.</li>
+    </ul>
+    <p>
+      In the GGBI Framework, Green measures are considered together with Grey, Blue, and
+      Intelligent elements to evaluate combined performance and trade-offs.
+    </p>
+  </section>
+
+  <!-- Examples of practices -->
+  <section class="section">
+    <h2>Examples of Green Infrastructure Practices</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Rain Gardens &amp; Bioretention</h3>
+        <p>
+          Depressed or planted areas that capture and infiltrate runoff, allowing water
+          to percolate through engineered soils and be taken up by vegetation. Often used
+          to manage roadway, parking, or roof runoff.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Permeable Pavements</h3>
+        <p>
+          Engineered surfaces that allow water to pass through joints or voids into an
+          underlying storage layer. They reduce surface runoff, delay flow, and support
+          groundwater recharge where conditions allow.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Green Roofs</h3>
+        <p>
+          Vegetated roof systems that store rainfall in substrate layers, promote
+          evapotranspiration, and moderate roof temperatures. They reduce roof runoff
+          and contribute to building and urban-scale benefits.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Vegetated Swales &amp; Buffers</h3>
+        <p>
+          Channels, strips, and buffers that convey runoff more slowly than traditional
+          pipes, promoting infiltration, sediment deposition, and pollutant attenuation
+          along the flow path.
+        </p>
+      </div>
+    </div>
+    <div class="note-box">
+      Many Green practices operate at relatively small spatial scales (e.g., a roof,
+      street, or block), but their cumulative effects can be significant for neighborhood
+      and watershed responses when they are planned as part of an integrated portfolio.
+    </div>
+  </section>
+
+  <!-- Interactions with other domains -->
+  <section class="section">
+    <h2>Interactions with Grey, Blue, and Intelligent Domains</h2>
+    <p>
+      Green infrastructure interacts with other domains in several ways:
+    </p>
+    <ul>
+      <li>
+        <strong>With Grey infrastructure:</strong> Green practices can reduce inflows to
+        pipes, sewers, tunnels, and storage facilities, potentially lowering design loads
+        or extending the service life of grey systems.
+      </li>
+      <li>
+        <strong>With Blue environments:</strong> By reducing and slowing runoff, Green
+        measures influence flows, water quality, and sediment delivery to rivers, estuaries,
+        and coasts.
+      </li>
+      <li>
+        <strong>With the Intelligent layer:</strong> Monitoring, modeling, and analysis
+        help evaluate Green performance, optimize siting and design, and support adaptive
+        management and communication.
+      </li>
+    </ul>
+    <p>
+      Considering these interactions is essential when Green infrastructure is used to
+      support broader goals such as flood mitigation, water quality improvement, and
+      climate adaptation.
+    </p>
+  </section>
+
+  <!-- How this connects to applications -->
+  <section class="section">
+    <h2>Links to Applications on This Site</h2>
+    <p>
+      On this website, the Green domain is most directly connected to:
+    </p>
+    <ul>
+      <li><a href="/applications/urban-stormwater.html">Urban stormwater and green stormwater infrastructure</a></li>
+      <li><a href="/applications/watersheds.html">Watershed and basin-scale responses</a></li>
+      <li><a href="/applications/flood-resilience.html">Flood resilience under intense rainfall</a></li>
+      <li><a href="/applications/data-models-intelligence.html">Data, models, and intelligent evaluation of Green performance</a></li>
+    </ul>
+    <p>
+      As additional case studies are added, this page can point to specific examples
+      illustrating how Green infrastructure contributes to the overall GGBI Framework.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
