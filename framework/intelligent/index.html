@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Intelligent Layer & Infrastructure – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="The Intelligent layer within the Green–Grey–Blue–Intelligent (GGBI) Framework: data, models, AI tools, monitoring, institutional knowledge, and communication that support adaptive planning and resilience in water and urban environments." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #7c3aed;       /* purple accent to distinguish Intelligent */
+      --accent-soft: #ede9fe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #6d28d9;
+      border: 1px solid #ddd6fe;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.1rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin-top: 0.1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.2rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      font-size: 0.9rem;
+      color: #4c1d95;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/" class="active">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/framework/">Framework</a> &raquo;
+    <span>Intelligent Layer &amp; Infrastructure</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Intelligent Domain</div>
+    <h1 class="hero-title">Intelligent Layer &amp; Infrastructure in the GGBI Framework</h1>
+    <p class="hero-subtitle">
+      In the Green–Grey–Blue–Intelligent (GGBI) Framework, the <strong>Intelligent</strong>
+      domain represents the layer that connects data, models, monitoring, AI tools,
+      institutional knowledge, and communication. It helps interpret how Green, Grey, and
+      Blue components behave and supports more informed, adaptive decisions in water and
+      urban environments.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Monitoring &amp; sensors</span>
+      <span class="pill">Data &amp; models</span>
+      <span class="pill">AI &amp; analytics</span>
+      <span class="pill">Decision support</span>
+      <span class="pill">Institutional learning</span>
+      <span class="pill">Communication &amp; education</span>
+    </div>
+  </section>
+
+  <!-- What the Intelligent layer includes -->
+  <section class="section">
+    <h2>What the Intelligent Layer Includes</h2>
+    <p>
+      The Intelligent layer is not a single tool or software platform. It is a collection
+      of capabilities that help us observe, understand, and manage Green, Grey, and Blue
+      elements more effectively. These capabilities can involve:
+    </p>
+    <ul>
+      <li><strong>Monitoring and sensing:</strong> water levels, flows, rainfall, water quality, and other observations.</li>
+      <li><strong>Data management:</strong> organizing, storing, and accessing environmental and infrastructure data.</li>
+      <li><strong>Models and analysis:</strong> hydrologic, hydraulic, hydrodynamic, and water-quality models, as well as statistical and process-based analyses.</li>
+      <li><strong>AI and advanced tools:</strong> pattern recognition, scenario exploration, knowledge distillation, and other emerging methods that assist understanding and communication.</li>
+      <li><strong>Institutional and governance aspects:</strong> how agencies, communities, and decision-makers use information to coordinate actions and learn over time.</li>
+      <li><strong>Education and communication:</strong> ways of explaining processes and trade-offs to students, practitioners, and the public.</li>
+    </ul>
+    <p>
+      These elements together support more adaptive and transparent planning, operation,
+      and evaluation of water and urban infrastructure.
+    </p>
+  </section>
+
+  <!-- Illustrative components -->
+  <section class="section">
+    <h2>Illustrative Components of Intelligent Infrastructure</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Monitoring Networks</h3>
+        <p>
+          Rain gauges, level sensors, flow meters, tide gauges, and water-quality stations
+          that provide real-time or long-term data on how systems behave under different
+          conditions, including extreme events.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Hydrologic &amp; Hydraulic Models</h3>
+        <p>
+          Models used to represent rainfall–runoff, drainage networks, river flows, and
+          interactions with Green and Grey infrastructure. They support design, scenario
+          analysis, and risk assessment.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Hydrodynamic &amp; Coastal Models</h3>
+        <p>
+          Models of tides, storm surge, waves, salinity, and sediment that help evaluate
+          estuarine and coastal behavior, including the effects of infrastructure and
+          sea-level rise.
+        </p>
+      </div>
+      <div class="card">
+        <h3>AI-Supported Tools</h3>
+        <p>
+          Tools that assist with data synthesis, pattern recognition, visualization,
+          scenario exploration, and translation of technical material into more accessible
+          formats for teaching and communication.
+        </p>
+      </div>
+    </div>
+    <div class="note-box">
+      Intelligent capabilities are most effective when they are grounded in sound physical
+      understanding and used to complement—not replace—engineering judgment and local
+      knowledge.
+    </div>
+  </section>
+
+  <!-- How the Intelligent domain interacts with G, Grey, Blue -->
+  <section class="section">
+    <h2>Connecting Green, Grey, and Blue Domains</h2>
+    <p>
+      The Intelligent domain provides the “connective tissue” that links the other three
+      domains of the GGBI Framework:
+    </p>
+    <ul>
+      <li>
+        <strong>With Green:</strong> Monitoring and models help quantify how green
+        infrastructure affects runoff, peak flows, water quality, and microclimate, and
+        support design optimization and performance evaluation.
+      </li>
+      <li>
+        <strong>With Grey:</strong> Data and models aid in evaluating capacity, reliability,
+        and failure modes of pipes, storage, levees, and coastal structures under a range
+        of scenarios, including climate-driven extremes.
+      </li>
+      <li>
+        <strong>With Blue:</strong> Hydrodynamic and morphodynamic models, supported by
+        observations, help interpret estuarine and coastal behavior under combined river,
+        tidal, surge, and wave influences.
+      </li>
+    </ul>
+    <p>
+      By drawing these pieces together, the Intelligent layer helps identify where different
+      measures reinforce or conflict with each other and how portfolios of Green, Grey,
+      and Blue interventions can be evaluated systematically.
+    </p>
+  </section>
+
+  <!-- Human and institutional intelligence -->
+  <section class="section">
+    <h2>Human, Institutional, and Educational Dimensions</h2>
+    <p>
+      Intelligence in the GGBI Framework is not limited to digital tools. It also includes:
+    </p>
+    <ul>
+      <li><strong>Professional experience and judgment</strong> developed through practice and case studies.</li>
+      <li><strong>Institutional arrangements</strong> that enable agencies and stakeholders to share data and coordinate actions.</li>
+      <li><strong>Community knowledge and engagement</strong> that help identify priorities, vulnerabilities, and feasible solutions.</li>
+      <li><strong>Teaching and training</strong> that build capacity among students and practitioners to understand and apply integrated concepts.</li>
+    </ul>
+    <p>
+      These human and institutional aspects are essential for turning information into
+      durable resilience outcomes on the ground.
+    </p>
+  </section>
+
+  <!-- Links to applications -->
+  <section class="section">
+    <h2>Links to Applications on This Site</h2>
+    <p>
+      On this website, the Intelligent domain is closely connected to:
+    </p>
+    <ul>
+      <li><a href="/applications/data-models-intelligence.html">Data, models, and intelligent tools</a></li>
+      <li><a href="/applications/urban-stormwater.html">Urban stormwater and green stormwater infrastructure</a></li>
+      <li><a href="/applications/watersheds.html">Watershed and basin-scale planning</a></li>
+      <li><a href="/applications/estuaries-coasts.html">Estuarine and coastal processes</a></li>
+      <li><a href="/applications/flood-resilience.html">Flood resilience across pluvial, fluvial, and coastal hazards</a></li>
+    </ul>
+    <p>
+      As additional examples and teaching materials are added, this page can highlight
+      specific uses of Intelligent approaches to support integrated Green–Grey–Blue
+      strategies.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
