@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grey Infrastructure – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Grey infrastructure within the Green–Grey–Blue–Intelligent (GGBI) Framework: engineered structures and systems for conveyance, storage, drainage, and coastal protection across water and urban environments." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #374151;         /* grey accent */
+      --accent-soft: #e5e7eb;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #374151;
+      border: 1px solid #d1d5db;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.1rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin-top: 0.1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.2rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #f3f4f6;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/" class="active">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/framework/">Framework</a> &raquo;
+    <span>Grey Infrastructure</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Grey Domain</div>
+    <h1 class="hero-title">Grey Infrastructure in the GGBI Framework</h1>
+    <p class="hero-subtitle">
+      In the Green–Grey–Blue–Intelligent (GGBI) Framework, the <strong>Grey</strong> domain
+      includes engineered structures and systems that convey, store, protect, or control
+      water. Grey infrastructure forms the backbone of urban drainage, river engineering,
+      stormwater management, and coastal protection.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Pipes &amp; drains</span>
+      <span class="pill">Culverts &amp; tunnels</span>
+      <span class="pill">Detention &amp; storage</span>
+      <span class="pill">Levees &amp; floodwalls</span>
+      <span class="pill">Weirs &amp; spillways</span>
+      <span class="pill">Coastal structures</span>
+    </div>
+  </section>
+
+  <!-- Role of grey infrastructure -->
+  <section class="section">
+    <h2>Role of Grey Infrastructure</h2>
+    <p>
+      Grey infrastructure provides essential hydraulic and structural functions throughout
+      water and urban environments. It plays a central role in:
+    </p>
+    <ul>
+      <li>Conveying stormwater, wastewater, and flood flows.</li>
+      <li>Providing storage, detention, or diversion during high-flow events.</li>
+      <li>Protecting developed areas from riverine and coastal hazards.</li>
+      <li>Managing drainage, street runoff, and combined sewer systems.</li>
+      <li>Stabilizing shorelines, channels, and coastal zones.</li>
+    </ul>
+    <p>
+      While traditional grey systems have focused on single functions (e.g., conveyance),
+      modern practice emphasizes flexibility, integration, redundancy, and adaptation
+      to climate-driven extremes.
+    </p>
+  </section>
+
+  <!-- Examples of grey infrastructure -->
+  <section class="section">
+    <h2>Examples of Grey Infrastructure</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Pipes, Culverts, &amp; Tunnels</h3>
+        <p>
+          These structures form the underlying network for conveying stormwater and urban
+          drainage. Their performance depends on slope, capacity, roughness, and maintenance.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Detention &amp; Retention Facilities</h3>
+        <p>
+          Basins, tanks, surface ponds, and underground structures that store runoff during
+          storms and release it in a controlled manner. They may also provide water-quality
+          treatment.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Levees, Floodwalls, &amp; Barriers</h3>
+        <p>
+          Structural measures used to protect flood-prone areas from river overflow, storm
+          surge, and tidal inundation. Their design involves elevation, stability, overtopping,
+          and seepage considerations.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Coastal &amp; Shoreline Structures</h3>
+        <p>
+          Bulkheads, revetments, seawalls, groins, and breakwaters that modify wave energy,
+          water levels, and sediment dynamics along coasts and estuaries.
+        </p>
+      </div>
+    </div>
+    <div class="note-box">
+      Grey infrastructure is often the most visible and expensive component of water
+      management systems. Its effectiveness increases when designed and operated together
+      with Green, Blue, and Intelligent components.
+    </div>
+  </section>
+
+  <!-- Interactions with other domains -->
+  <section class="section">
+    <h2>Interactions with Green, Blue, and Intelligent Domains</h2>
+    <p>
+      Grey infrastructure interacts with other domains in ways that influence overall
+      system performance:
+    </p>
+    <ul>
+      <li>
+        <strong>With Green:</strong> Grey systems receive runoff from or work in parallel
+        with Green measures. Coordinated planning can reduce pipe sizes, improve water
+        quality, and lower maintenance burdens.
+      </li>
+      <li>
+        <strong>With Blue:</strong> Grey structures influence water levels, flows, storage,
+        and sediment processes in rivers, estuaries, and coasts. Examples include tidal
+        gates, training walls, and storm-surge barriers.
+      </li>
+      <li>
+        <strong>With the Intelligent layer:</strong> Sensors, models, and data tools improve
+        monitoring, forecasting, and control of grey assets—from pump stations to urban
+        drainage networks to coastal defenses.
+      </li>
+    </ul>
+    <p>
+      In the GGBI Framework, Grey infrastructure is evaluated as part of an integrated
+      portfolio that considers resilience, reliability, redundancy, and long-term
+      adaptability.
+    </p>
+  </section>
+
+  <!-- Application connections -->
+  <section class="section">
+    <h2>Links to Applications on This Site</h2>
+    <p>
+      The Grey domain connects directly to:
+    </p>
+    <ul>
+      <li><a href="/applications/urban-stormwater.html">Urban stormwater and drainage</a></li>
+      <li><a href="/applications/flood-resilience.html">Flood resilience and high-flow events</a></li>
+      <li><a href="/applications/estuaries-coasts.html">Estuarine and coastal processes</a></li>
+      <li><a href="/applications/watersheds.html">Watershed and basin-scale hydrology</a></li>
+    </ul>
+    <p>
+      Future updates may include case studies illustrating coordination between Grey,
+      Green, Blue, and Intelligent elements.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
