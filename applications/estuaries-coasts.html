@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Estuaries &amp; Coasts – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Estuaries and coasts within the Green–Grey–Blue–Intelligent (GGBI) Framework: tidal processes, storm surge, waves, salinity intrusion, wetlands, sediment dynamics, and coastal protection." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #1d4ed8;      /* blue accent */
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.1rem;
+    }
+
+    .section h2 {
+      font-size: 1.32rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .note-box {
+      margin-top: 1.1rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.6rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/" class="active">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/applications/">Applications</a> &raquo;
+    <span>Estuaries &amp; Coasts</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Estuaries &amp; Coasts</div>
+    <h1 class="hero-title">Estuaries &amp; Coasts</h1>
+    <p class="hero-subtitle">
+      Estuaries and coastal environments experience the combined influences of
+      river discharge, tides, storm surge, waves, sediment processes, and sea-level
+      change. In the GGBI Framework, estuarine and coastal applications highlight how
+      upstream and coastal drivers interact—and how portfolios of Green, Grey, Blue,
+      and Intelligent elements support resilience.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Tides &amp; tidal propagation</span>
+      <span class="pill">Storm surge</span>
+      <span class="pill">Waves &amp; nearshore processes</span>
+      <span class="pill">Salinity intrusion</span>
+      <span class="pill">Wetlands &amp; marshes</span>
+      <span class="pill">Sediment dynamics</span>
+    </div>
+  </section>
+
+  <!-- Role of estuaries & coasts -->
+  <section class="section">
+    <h2>Estuaries &amp; Coasts in the GGBI Framework</h2>
+    <p>
+      Estuaries and coastal systems lie at the downstream end of watersheds and the
+      upstream edge of the ocean. They integrate signals from both directions. The
+      GGBI Framework helps clarify how:
+    </p>
+    <ul>
+      <li>River discharge and tidal forcing interact to shape water levels and currents.</li>
+      <li>Storm surge and waves propagate inland and interact with infrastructure.</li>
+      <li>Wetlands and marshes influence flood attenuation, sediment processes, and ecology.</li>
+      <li>Shoreline structures modify nearshore hydrodynamics and sediment transport.</li>
+      <li>Sea-level rise alters estuarine circulation, salinity, and inundation patterns.</li>
+    </ul>
+    <p>
+      These environments are especially sensitive to climate variability, extreme events,
+      and upstream land- and water-management decisions.
+    </p>
+  </section>
+
+  <!-- Representative settings & processes -->
+  <section class="section">
+    <h2>Representative Settings &amp; Processes</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Tidal Rivers &amp; Channels</h3>
+        <p>
+          Transitional zones where river-driven flows meet tidal forcing, influenced by
+          bottom friction, geometry, salinity, winds, and upstream–downstream gradients.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Estuaries &amp; Bays</h3>
+        <p>
+          Partially mixed or stratified systems that respond to river inflows, tides,
+          winds, and basin geometry, and host critical ecological and biogeochemical
+          processes.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Coastal Shorelines</h3>
+        <p>
+          Dynamic zones shaped by waves, longshore transport, coastal storms, sea-level
+          change, and human interventions such as seawalls, breakwaters, and nourishment.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Wetlands &amp; Marshes</h3>
+        <p>
+          Intertidal vegetated areas that provide habitat, wave attenuation, nutrient
+          cycling, and floodwater storage—and are sensitive to sediment supply and
+          sea-level rise.
+        </p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      Estuary–coast behavior reflects contributions from both inland drivers and coastal
+      ocean processes. Integrated perspectives help explain how interventions upstream
+      influence water levels, salinity, sediment, and resilience downstream.
+    </div>
+  </section>
+
+  <!-- Interaction with G, Grey, Intelligent -->
+  <section class="section">
+    <h2>Interactions Across the GGBI Domains</h2>
+    <p>
+      Estuarine and coastal challenges often require combinations of:
+    </p>
+    <ul>
+      <li>
+        <strong>Green elements:</strong> wetlands, living shorelines, coastal marsh
+        restoration, and upland GI that influence flows and sediment delivery.
+      </li>
+      <li>
+        <strong>Grey elements:</strong> levees, seawalls, breakwaters, tidal gates, surge
+        barriers, navigation channels, and shoreline stabilization structures.
+      </li>
+      <li>
+        <strong>Blue elements:</strong> tides, storm surge, waves, salinity, stratification,
+        and sediment dynamics that shape estuarine and coastal behavior.
+      </li>
+      <li>
+        <strong>Intelligent elements:</strong> monitoring networks, hydrodynamic and
+        morphodynamic models, forecasting systems, and tools for evaluating adaptation
+        under sea-level rise and changing storm patterns.
+      </li>
+    </ul>
+    <p>
+      The GGBI Framework emphasizes how these elements reinforce or constrain each other
+      across spatial and temporal scales.
+    </p>
+  </section>
+
+  <!-- Sea-level rise, surge, coastal resilience -->
+  <section class="section">
+    <h2>Sea-Level Rise, Extreme Events, &amp; Coastal Resilience</h2>
+    <p>
+      Estuaries and coasts face increasing risks from sea-level rise, stronger storms,
+      and changing wave climates. Applications within the GGBI Framework can support:
+    </p>
+    <ul>
+      <li>Evaluation of storm-surge pathways and coastal flooding.</li>
+      <li>Assessment of shoreline change and sediment budgets.</li>
+      <li>Analysis of salinity intrusion and estuarine circulation under future conditions.</li>
+      <li>Design and evaluation of hybrid Green–Grey interventions.</li>
+      <li>Development of long-term coastal adaptation strategies.</li>
+    </ul>
+    <p>
+      Resilience planning benefits from linking hydrodynamics, geomorphology, ecosystems,
+      and infrastructure considerations.
+    </p>
+  </section>
+
+  <!-- Connections -->
+  <section class="section">
+    <h2>Connections to Other GGBI Domains</h2>
+    <ul>
+      <li><a href="/framework/green/">Green domain</a> – wetlands, marshes, and upland GI</li>
+      <li><a href="/framework/grey/">Grey domain</a> – coastal structures and flood protection</li>
+      <li><a href="/framework/blue/">Blue domain</a> – estuarine and coastal processes</li>
+      <li><a href="/framework/intelligent/">Intelligent domain</a> – models, monitoring, and forecasting</li>
+    </ul>
+  </section>
+
+  <!-- Related Applications -->
+  <section class="section">
+    <h2>Related Applications on This Site</h2>
+    <ul>
+      <li><a href="/applications/watersheds.html">Watersheds &amp; basin-scale planning</a></li>
+      <li><a href="/applications/urban-stormwater.html">Urban stormwater &amp; GI</a></li>
+      <li><a href="/applications/flood-resilience.html">Flood resilience (pluvial–fluvial–coastal)</a></li>
+      <li><a href="/applications/data-models-intelligence.html">Data, models &amp; intelligent tools</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
