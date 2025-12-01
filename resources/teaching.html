@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Teaching Materials – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Teaching materials related to the Green–Grey–Blue–Intelligent (GGBI) Framework, including course notes, lecture slides, example problems, and conceptual diagrams from courses taught by Professor Qizhong (George) Guo." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #0369a1;      /* blue-cyan, “teaching / learning” */
+      --accent-soft: #e0f2fe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.4rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 46rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #075985;
+      border: 1px solid #bae6fd;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.1rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #e0f2fe;
+      border: 1px solid #bae6fd;
+      font-size: 0.9rem;
+      color: #075985;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.7rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/" class="active">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/resources/">Resources</a> &raquo;
+    <span>Teaching Materials</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Teaching</div>
+    <h1 class="hero-title">Teaching Materials &amp; Course Resources</h1>
+    <p class="hero-subtitle">
+      Teaching materials related to the Green–Grey–Blue–Intelligent (GGBI) Framework and
+      to foundational topics in water resources and environmental engineering. These
+      resources originate from courses taught by Professor Qizhong (George) Guo, including
+      Coastal Engineering, Green Infrastructure, Hydrology, Fluid Mechanics, and related
+      subjects.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Course notes</span>
+      <span class="pill">Lecture slides</span>
+      <span class="pill">Example problems</span>
+      <span class="pill">Conceptual diagrams</span>
+      <span class="pill">Case-study examples</span>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <h2>Purpose of This Section</h2>
+    <p>
+      The teaching materials collected here are meant to support students, educators, and
+      practitioners who wish to understand and apply ideas central to the GGBI Framework,
+      including stormwater management, hydrology and hydraulics, estuarine and coastal
+      processes, and integrated resilience planning.
+    </p>
+    <p>
+      Over time, selected lecture notes, slides, example problems, figures, and
+      conceptual diagrams may be made available, along with links to related publications
+      and technical reports.
+    </p>
+  </section>
+
+  <!-- Course-based organization -->
+  <section class="section">
+    <h2>Courses &amp; Thematic Modules</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Green Infrastructure for Stormwater Management</h3>
+        <p>
+          Materials related to rainfall–runoff processes, GI design and performance,
+          sponge-city concepts, and urban flood mitigation. May include lecture slides,
+          short concept notes, and illustrative case studies.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Coastal Engineering</h3>
+        <p>
+          Notes and diagrams on waves, tides, storm surge, coastal structures, sediment
+          transport, soft/green coastal measures, and coastal resilience, linked to the
+          Blue and Grey domains of the GGBI Framework.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Hydrology &amp; Hydraulics</h3>
+        <p>
+          Materials on rainfall–runoff, channel flow, open-channel hydraulics, flood
+          routing, and connections to urban stormwater, watersheds, and estuaries.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Fluid Mechanics &amp; Laboratory Instruction</h3>
+        <p>
+          Selected lab instructions, demonstration figures, and example calculations drawn
+          from fluid mechanics teaching and laboratory activities.
+        </p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      Specific files and links can be added under each thematic area as they are
+      prepared for sharing. The emphasis will be on clarity, conceptual understanding,
+      and connections to the GGBI Framework.
+    </div>
+  </section>
+
+  <!-- Types of materials -->
+  <section class="section">
+    <h2>Types of Teaching Materials</h2>
+    <ul>
+      <li>Lecture slides and condensed “overview” diagrams for key topics.</li>
+      <li>Worked example problems and short calculation exercises.</li>
+      <li>Conceptual diagrams illustrating Green, Grey, Blue, and Intelligent interactions.</li>
+      <li>Selected case-study summaries that connect courses to real-world projects.</li>
+      <li>Short explanatory notes or handouts that accompany figures and examples.</li>
+    </ul>
+    <p>
+      Some resources may appear in simplified form on this site, with more detailed
+      versions available in course-specific learning systems or in the faculty website.
+    </p>
+  </section>
+
+  <!-- AI & teaching -->
+  <section class="section">
+    <h2>AI-Supported Teaching Experiments</h2>
+    <p>
+      Recent experiments with AI-assisted tools have explored ways to:
+    </p>
+    <ul>
+      <li>Condense multi-hour lectures into shorter overview materials.</li>
+      <li>Generate draft infographics for key topics in coastal engineering and GI.</li>
+      <li>Create alternative language versions of explanations for a broader audience.</li>
+      <li>Support students’ review of conceptual material outside of class.</li>
+    </ul>
+    <p>
+      Any AI-assisted materials shared here are carefully reviewed and refined to ensure
+      technical accuracy and clarity before being presented as teaching resources.
+    </p>
+  </section>
+
+  <!-- Links to other resource categories -->
+  <section class="section">
+    <h2>Related Resource Categories</h2>
+    <ul>
+      <li><a href="/resources/publications.html">Publications</a></li>
+      <li><a href="/resources/technical-reports.html">Technical reports</a></li>
+      <li><a href="/resources/tools-data.html">Data, tools &amp; models</a></li>
+      <li><a href="/resources/media.html">Media &amp; outreach</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
