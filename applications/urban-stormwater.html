@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Urban Stormwater & Green Stormwater Infrastructure – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Urban stormwater and green stormwater infrastructure within the Green–Grey–Blue–Intelligent (GGBI) Framework: rainfall–runoff processes, drainage networks, green infrastructure performance, sponge-city concepts, and urban flood resilience." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #16a34a;      /* green accent—stormwater is strongly green-grey */
+      --accent-soft: #dcfce7;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.1rem;
+    }
+
+    .section h2 {
+      font-size: 1.32rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin: 0 0 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.1rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      font-size: 0.9rem;
+      color: #166534;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.6rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/" class="active">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/applications/">Applications</a> &raquo;
+    <span>Urban Stormwater</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Urban Stormwater</div>
+    <h1 class="hero-title">Urban Stormwater &amp; Green Stormwater Infrastructure</h1>
+    <p class="hero-subtitle">
+      Urban stormwater involves rapid rainfall–runoff processes, drainage networks,
+      green infrastructure performance, and storm-related risks. In the GGBI Framework,
+      stormwater applications highlight how Green, Grey, Blue, and Intelligent elements
+      interact to reduce runoff, moderate peak flows, improve water quality, and enhance
+      resilience under more intense rainfall.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Rainfall–runoff</span>
+      <span class="pill">Green infrastructure</span>
+      <span class="pill">Urban drainage</span>
+      <span class="pill">Flood mitigation</span>
+      <span class="pill">Permeable pavements</span>
+      <span class="pill">Sponge-city concepts</span>
+    </div>
+  </section>
+
+  <!-- Role of GGBI in stormwater -->
+  <section class="section">
+    <h2>Stormwater in the GGBI Framework</h2>
+    <p>
+      Urban stormwater is shaped by how rainfall reaches the surface, how quickly it
+      becomes runoff, and how it travels through Green, Grey, and Blue pathways. The GGBI
+      Framework helps clarify:
+    </p>
+
+    <ul>
+      <li>Where rainfall is intercepted, infiltrated, stored, or conveyed.</li>
+      <li>How Green infrastructure modifies hydrographs and water quality.</li>
+      <li>How Grey infrastructure (pipes, culverts, storage) responds to intense storms.</li>
+      <li>How Blue environments receive and redistribute stormwater flows.</li>
+      <li>How Intelligent tools support monitoring, modeling, and communication.</li>
+    </ul>
+
+    <p>
+      Urban flooding, CSO risks, and water-quality issues often emerge from combinations
+      of these factors rather than from any single element alone.
+    </p>
+  </section>
+
+  <!-- GI examples -->
+  <section class="section">
+    <h2>Green Stormwater Infrastructure Examples</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Rain Gardens &amp; Bioretention</h3>
+        <p>
+          Engineered landscape features that capture runoff, promote infiltration, store
+          water, and support pollutant removal through vegetation and soil processes.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Permeable Pavements</h3>
+        <p>
+          Porous surfaces and subsurface storage layers that reduce runoff and delay flows,
+          providing both hydrologic and water-quality benefits.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Green Roofs</h3>
+        <p>
+          Vegetated systems that retain rainfall, promote evapotranspiration, moderate roof
+          temperatures, and reduce peak flow contributions to stormwater networks.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Swales &amp; Green Streets</h3>
+        <p>
+          Vegetated or engineered corridors that slow, filter, and infiltrate runoff while
+          enhancing urban landscapes.
+        </p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      While individual GI practices operate at small scales, their cumulative performance
+      can substantially reduce runoff and peak flows when deployed citywide or at
+      watershed scale.
+    </div>
+  </section>
+
+  <!-- Interaction with grey -->
+  <section class="section">
+    <h2>Interaction with Grey Infrastructure</h2>
+    <p>
+      Urban drainage relies on a network of pipes, culverts, tanks, inlets, and
+      conveyance structures. GI does not replace Grey systems; instead, GI and Grey
+      complement each other:
+    </p>
+
+    <ul>
+      <li>GI reduces inflows to pipes and storage facilities.</li>
+      <li>Grey systems provide routing, redundancy, and capacity under severe events.</li>
+      <li>Combined GI–Grey strategies can lower capital or rehabilitation needs.</li>
+      <li>GI can enhance water quality before flows reach Grey–Blue environments.</li>
+    </ul>
+
+    <p>
+      Coordinated planning often performs better than either GI or Grey solutions alone.
+    </p>
+  </section>
+
+  <!-- Intelligent -->
+  <section class="section">
+    <h2>The Role of the Intelligent Layer</h2>
+    <p>
+      Intelligent capabilities help evaluate and optimize stormwater strategies:
+    </p>
+
+    <ul>
+      <li>Monitoring rainfall, flows, and GI performance.</li>
+      <li>Hydrologic and hydraulic modeling for design and planning.</li>
+      <li>Scenario analysis under changing rainfall patterns.</li>
+      <li>Visualization for communication and teaching.</li>
+      <li>Data synthesis and decision-support tools.</li>
+    </ul>
+
+    <p>
+      These tools help identify effective combinations of GI and Grey interventions,
+      especially under more extreme rainfall patterns.
+    </p>
+  </section>
+
+  <!-- Sponge city -->
+  <section class="section">
+    <h2>Sponge-City Concepts</h2>
+    <p>
+      Sponge-city approaches emphasize infiltration, storage, detention, wetlands, and
+      ecological features to manage rainfall close to where it falls. Many elements align
+      with long-standing low-impact development (LID) and GI practices while considering:
+    </p>
+
+    <ul>
+      <li>Integration of GI at neighborhood and city scales.</li>
+      <li>Connectivity between Green, Grey, and Blue pathways.</li>
+      <li>Performance during extreme rainfall conditions.</li>
+      <li>Urban heat moderation, co-benefits, and amenity values.</li>
+    </ul>
+
+    <p>
+      The GGBI Framework provides a structure to relate sponge-city concepts to other
+      water and urban challenges.
+    </p>
+  </section>
+
+  <!-- Links to other domains -->
+  <section class="section">
+    <h2>Connections to Other GGBI Domains</h2>
+
+    <ul>
+      <li><a href="/framework/green/">Green domain</a> – GI practices and performance</li>
+      <li><a href="/framework/grey/">Grey domain</a> – drainage and storage infrastructure</li>
+      <li><a href="/framework/blue/">Blue domain</a> – receiving waters</li>
+      <li><a href="/framework/intelligent/">Intelligent domain</a> – monitoring, modeling, and AI-supported tools</li>
+    </ul>
+  </section>
+
+  <!-- Links to applications -->
+  <section class="section">
+    <h2>Related Applications</h2>
+
+    <ul>
+      <li><a href="/applications/watersheds.html">Watersheds & basin-scale planning</a></li>
+      <li><a href="/applications/flood-resilience.html">Flood resilience (pluvial–fluvial–coastal)</a></li>
+      <li><a href="/applications/data-models-intelligence.html">Data, models & intelligent tools</a></li>
+      <li><a href="/applications/estuaries-coasts.html">Estuaries & coasts</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
