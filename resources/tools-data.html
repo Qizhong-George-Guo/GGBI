@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data, Tools &amp; Models – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Data resources, modeling tools, hydrologic and hydrodynamic models, conceptual tools, and intelligent utilities related to the Green–Grey–Blue–Intelligent (GGBI) Framework." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #4c1d95;      /* purple theme for “Intelligent” domain */
+      --accent-soft: #ede9fe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.4rem);
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 46rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #4c1d95;
+      border: 1px solid #ddd6fe;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.1rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      font-size: 0.9rem;
+      color: #4c1d95;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.7rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/" class="active">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/resources/">Resources</a> &raquo;
+    <span>Data, Tools &amp; Models</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Data &amp; Tools</div>
+    <h1 class="hero-title">Data, Tools &amp; Models</h1>
+    <p class="hero-subtitle">
+      Selected data resources, modeling tools, and conceptual utilities that support
+      analysis, visualization, and interpretation across Green, Grey, Blue, and
+      Intelligent domains of the GGBI Framework. This section includes hydrologic and
+      hydrodynamic models, monitoring data sources, and intelligent tools for teaching
+      and communication.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Monitoring data</span>
+      <span class="pill">Hydrologic models</span>
+      <span class="pill">Hydrodynamic models</span>
+      <span class="pill">Coastal tools</span>
+      <span class="pill">Conceptual diagrams</span>
+      <span class="pill">AI-assisted tools</span>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <h2>Purpose of This Section</h2>
+    <p>
+      This page provides a structured location for resources that support analysis of
+      rainfall–runoff, drainage networks, river systems, estuaries, and coastal waters,
+      as well as tools for conceptual explanation and teaching. As additional datasets,
+      models, or utilities are prepared, they may be added here.
+    </p>
+  </section>
+
+  <!-- Data sources -->
+  <section class="section">
+    <h2>Monitoring &amp; Observational Data</h2>
+    <p>
+      Representative sources of hydrologic, hydraulic, and coastal data:
+    </p>
+    <ul>
+      <li>Rainfall and climate data (e.g., NOAA, local networks).</li>
+      <li>Streamflow and river gauges (e.g., USGS NWIS).</li>
+      <li>Tidal elevation and storm-surge records (NOAA CO-OPS).</li>
+      <li>Water quality datasets from state and federal agencies.</li>
+      <li>Remote sensing for land cover, elevation, and shoreline change.</li>
+    </ul>
+    <p>
+      These datasets support analysis in the Green, Grey, and Blue domains and are often
+      used to calibrate hydrologic, hydraulic, or hydrodynamic models.
+    </p>
+  </section>
+
+  <!-- Models -->
+  <section class="section">
+    <h2>Hydrologic, Hydraulic &amp; Hydrodynamic Models</h2>
+    <p>
+      Examples of models commonly used in stormwater, watershed, estuarine, and coastal
+      analysis:
+    </p>
+    <ul>
+      <li><strong>Rainfall–runoff and stormwater models</strong>: SWMM, HEC-HMS.</li>
+      <li><strong>Hydraulic and river models</strong>: HEC-RAS (1D/2D), MIKE HYDRO.</li>
+      <li><strong>Hydrodynamic models</strong>: ADCIRC, Delft3D, EFDC.</li>
+      <li><strong>Wave models</strong>: SWAN, STWAVE.</li>
+      <li><strong>Estuarine models</strong>: ROMS, SELFE, FVCOM.</li>
+    </ul>
+    <p>
+      These tools help analyze Green–Grey–Blue interactions, evaluate infrastructure
+      alternatives, and assess multi-hazard flood risks.
+    </p>
+  </section>
+
+  <!-- Conceptual tools -->
+  <section class="section">
+    <h2>Conceptual Tools &amp; Diagrams</h2>
+    <p>
+      This section may later include:
+    </p>
+    <ul>
+      <li>Conceptual diagrams illustrating GGBI domains and interactions.</li>
+      <li>Graphics for teaching waves, tides, storm surge, and runoff processes.</li>
+      <li>Templates for explaining portfolios of measures.</li>
+      <li>Simplified schematics for communicating key resilience concepts.</li>
+    </ul>
+    <p>
+      These diagrams can support both teaching and outreach.
+    </p>
+  </section>
+
+  <!-- AI-assisted utilities -->
+  <section class="section">
+    <h2>AI-Assisted Educational &amp; Analytical Tools</h2>
+    <p>
+      Emerging AI-supported tools are being explored for:
+    </p>
+    <ul>
+      <li>Summarizing long technical documents or lecture sets.</li>
+      <li>Drafting conceptual diagrams before refinement.</li>
+      <li>Supporting scenario comparison or sensitivity exploration.</li>
+      <li>Preparing multilingual explanations for teaching and outreach.</li>
+    </ul>
+    <p>
+      These AI-assisted materials are reviewed for technical accuracy before being used in
+      teaching, communication, or decision support.
+    </p>
+  </section>
+
+  <!-- Related categories -->
+  <section class="section">
+    <h2>Related Resource Categories</h2>
+    <ul>
+      <li><a href="/resources/publications.html">Publications</a></li>
+      <li><a href="/resources/technical-reports.html">Technical reports</a></li>
+      <li><a href="/resources/teaching.html">Teaching materials</a></li>
+      <li><a href="/resources/media.html">Media &amp; outreach</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
