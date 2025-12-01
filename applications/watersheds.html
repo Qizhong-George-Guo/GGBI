@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Watersheds &amp; Basin-Scale Planning – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Watersheds and basin-scale planning within the Green–Grey–Blue–Intelligent (GGBI) Framework: linking upland measures, river networks, estuaries and coasts, and resilience strategies across scales." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #0f766e;      /* teal accent for watershed/basin */
+      --accent-soft: #ccfbf1;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #115e59;
+      border: 1px solid #99f6e4;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.1rem;
+    }
+
+    .section h2 {
+      font-size: 1.32rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin: 0 0 0.7rem;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin: 0 0 0.8rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.1rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.1rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #ecfeff;
+      border: 1px solid #99f6e4;
+      font-size: 0.9rem;
+      color: #115e59;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.6rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/" class="active">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/applications/">Applications</a> &raquo;
+    <span>Watersheds &amp; Basins</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Watersheds &amp; Basins</div>
+    <h1 class="hero-title">Watersheds &amp; Basin-Scale Planning</h1>
+    <p class="hero-subtitle">
+      Watersheds and river basins provide the natural organizing unit for linking rainfall,
+      land use, Green and Grey infrastructure, river networks, estuaries, and coasts. In
+      the GGBI Framework, watershed and basin-scale applications emphasize how local
+      interventions accumulate and interact across space and time.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Catchments &amp; basins</span>
+      <span class="pill">Land–water interactions</span>
+      <span class="pill">River networks</span>
+      <span class="pill">Source–to–sea</span>
+      <span class="pill">Resilience planning</span>
+      <span class="pill">Multi-scale linkages</span>
+    </div>
+  </section>
+
+  <!-- Why watersheds matter in GGBI -->
+  <section class="section">
+    <h2>Watersheds in the GGBI Framework</h2>
+    <p>
+      Watersheds collect rainfall, route runoff, and deliver water, sediment, and
+      constituents downstream. Decisions made at hillslope, neighborhood, and city scales
+      can influence river flows, estuarine conditions, and coastal behavior. The GGBI
+      Framework helps:
+    </p>
+    <ul>
+      <li>Connect upland Green and Grey measures to downstream Blue environments.</li>
+      <li>Consider cumulative effects of multiple interventions across a basin.</li>
+      <li>Relate local stormwater projects to basin-scale flood and water-quality goals.</li>
+      <li>Integrate data, models, and institutional perspectives across jurisdictions.</li>
+    </ul>
+    <p>
+      This perspective is important for long-term flood mitigation, ecosystem restoration,
+      navigation, and resilience planning in large river and estuary–river systems.
+    </p>
+  </section>
+
+  <!-- Representative themes / processes -->
+  <section class="section">
+    <h2>Representative Themes and Processes</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Rainfall–Runoff &amp; Land Use</h3>
+        <p>
+          How land cover, soil properties, and topography influence runoff generation and
+          hydrographs at hillslope, catchment, and basin scales.
+        </p>
+      </div>
+      <div class="card">
+        <h3>River Networks &amp; Storage</h3>
+        <p>
+          How rivers, tributaries, reservoirs, floodplains, and wetlands convey and store
+          water and sediment under variable flow conditions.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Water Quality &amp; Sediment</h3>
+        <p>
+          Basin-scale nutrient and sediment delivery to rivers, lakes, estuaries, and
+          coastal waters, and how management actions alter loads and timing.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Source–to–Sea Linkages</h3>
+        <p>
+          Connections from headwaters to delta and coastal environments, including estuary–
+          river interactions and large-basin resilience considerations.
+        </p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      Basin-scale perspectives do not replace local design questions; they provide context
+      for how many individual decisions add up to regional outcomes for floods, ecosystems,
+      and navigation.
+    </div>
+  </section>
+
+  <!-- Green, Grey, Blue, Intelligent at basin scale -->
+  <section class="section">
+    <h2>Green, Grey, Blue, and Intelligent Elements at Basin Scale</h2>
+    <p>
+      Watershed and basin-scale planning often involves combinations of:
+    </p>
+    <ul>
+      <li>
+        <strong>Green measures:</strong> land conservation, reforestation, wetland
+        restoration, floodplain reconnection, and distributed GI that modify runoff and
+        sediment delivery.
+      </li>
+      <li>
+        <strong>Grey measures:</strong> reservoirs, levees, floodways, navigation channels,
+        diversion structures, and urban drainage that route or store water.
+      </li>
+      <li>
+        <strong>Blue environments:</strong> rivers, lakes, estuaries, deltas, and coastal
+        waters that integrate upstream signals and respond to combined flows, tides,
+        surges, and waves.
+      </li>
+      <li>
+        <strong>Intelligent tools:</strong> monitoring networks, basin-scale hydrologic and
+        hydrodynamic models, scenario analysis, and decision-support approaches for long-
+        term planning.
+      </li>
+    </ul>
+    <p>
+      The GGBI Framework encourages viewing these elements together when developing basin-
+      scale strategies for flood mitigation, water quality, and ecological resilience.
+    </p>
+  </section>
+
+  <!-- Planning & resilience -->
+  <section class="section">
+    <h2>Planning, Resilience, and Long-Term Perspectives</h2>
+    <p>
+      Large river and estuary–river basins are influenced by climate variability, land-use
+      change, infrastructure aging, and sea-level rise. Basin-scale applications of the
+      GGBI Framework can support:
+    </p>
+    <ul>
+      <li>Assessment of multi-hazard flood risks across pluvial, fluvial, and coastal domains.</li>
+      <li>Identification of portfolios of Green, Grey, and Blue measures at multiple scales.</li>
+      <li>Exploration of trade-offs among navigation, flood protection, ecosystem health, and land use.</li>
+      <li>Development of long-term adaptation pathways under uncertain future conditions.</li>
+    </ul>
+    <p>
+      These perspectives are relevant to major river basins, estuarine systems, and
+      regional resilience initiatives.
+    </p>
+  </section>
+
+  <!-- Links to framework domains -->
+  <section class="section">
+    <h2>Connections to GGBI Framework Domains</h2>
+    <ul>
+      <li><a href="/framework/green/">Green domain</a> – upland GI, land cover, and ecological measures</li>
+      <li><a href="/framework/grey/">Grey domain</a> – dams, levees, drainage, and flood-control infrastructure</li>
+      <li><a href="/framework/blue/">Blue domain</a> – river channels, estuaries, deltas, and coasts</li>
+      <li><a href="/framework/intelligent/">Intelligent domain</a> – monitoring, basin models, and decision support</li>
+    </ul>
+  </section>
+
+  <!-- Links to related applications -->
+  <section class="section">
+    <h2>Related Applications on This Site</h2>
+    <ul>
+      <li><a href="/applications/urban-stormwater.html">Urban stormwater & green stormwater infrastructure</a></li>
+      <li><a href="/applications/estuaries-coasts.html">Estuaries & coasts</a></li>
+      <li><a href="/applications/flood-resilience.html">Flood resilience (pluvial–fluvial–coastal)</a></li>
+      <li><a href="/applications/data-models-intelligence.html">Data, models & intelligent tools</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
