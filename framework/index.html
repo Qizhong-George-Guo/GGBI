@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Framework – GGBI – Green–Grey–Blue–Intelligent Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Overview of the Green–Grey–Blue–Intelligent (GGBI) Framework, describing the four domains—Green, Grey, Blue, and Intelligent—and how they interact across water and urban environments." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: var(--accent); font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 3.4vw, 2.3rem);
+      line-height: 1.2;
+      margin: 0 0 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 44rem;
+      margin: 0 0 1rem;
+    }
+
+    .pill-row {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.3rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1.1rem 1.2rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+      display: block;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-decoration: none;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .card-pills {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .card-pill {
+      font-size: 0.75rem;
+      padding: 0.14rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: #f9fafb;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .note-box {
+      margin-top: 1.4rem;
+      padding: 0.9rem 1rem;
+      border-radius: 0.75rem;
+      background-color: #eff6ff;
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1e3a8a;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.1rem;
+      margin-bottom: 0.7rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    li { margin-bottom: 0.25rem; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.5rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/" class="active">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero / Intro -->
+  <section>
+    <div class="hero-eyebrow">Framework Overview</div>
+    <h1 class="hero-title">What is the Green–Grey–Blue–Intelligent (GGBI) Framework?</h1>
+    <p class="hero-subtitle">
+      The GGBI Framework provides a practical way to organize how we think about water and urban
+      environments by recognizing four interacting domains: <strong>Green</strong>,
+      <strong>Grey</strong>, <strong>Blue</strong>, and <strong>Intelligent</strong>.
+      It highlights how ecological, engineered, aquatic, and intelligent elements can be
+      combined to support resilience from local stormwater to watershed, estuarine, and
+      coastal scales.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Green infrastructure</span>
+      <span class="pill">Grey infrastructure</span>
+      <span class="pill">Blue environments</span>
+      <span class="pill">Intelligent layer</span>
+      <span class="pill">Pluvial–fluvial–coastal</span>
+      <span class="pill">Integrated thinking</span>
+    </div>
+  </section>
+
+  <!-- Four domains explanation -->
+  <section class="section">
+    <h2>The Four Domains</h2>
+    <p>
+      Each domain represents a different way in which water, infrastructure, and environments
+      interact. In practice, they overlap and must be considered together.
+    </p>
+
+    <div class="grid">
+      <!-- Green -->
+      <a class="card" href="/framework/green/">
+        <h3>Green Infrastructure</h3>
+        <p>
+          Ecological and nature-based components that provide infiltration, storage, evapotranspiration,
+          habitat, and co-benefits. Examples include rain gardens, green roofs, permeable
+          surfaces, wetlands, and restored floodplains.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Rainfall–runoff</span>
+          <span class="card-pill">GI &amp; sponge city</span>
+        </div>
+      </a>
+
+      <!-- Grey -->
+      <a class="card" href="/framework/grey/">
+        <h3>Grey Infrastructure</h3>
+        <p>
+          Engineered systems that convey, store, or control water, including pipes, culverts,
+          tunnels, weirs, levees, floodwalls, pump stations, and coastal structures.
+          Grey infrastructure often forms the backbone of urban and coastal protection.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Conveyance &amp; control</span>
+          <span class="card-pill">Urban &amp; coastal works</span>
+        </div>
+      </a>
+
+      <!-- Blue -->
+      <a class="card" href="/framework/blue/">
+        <h3>Blue Environments</h3>
+        <p>
+          Rivers, estuaries, bays, coasts, and open water bodies where tides, waves, river
+          flows, sediment, and ecosystems interact. Blue environments connect upland watersheds
+          with coastal and marine settings.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Rivers &amp; estuaries</span>
+          <span class="card-pill">Coasts &amp; wetlands</span>
+        </div>
+      </a>
+
+      <!-- Intelligent -->
+      <a class="card" href="/framework/intelligent/">
+        <h3>Intelligent Infrastructure &amp; Layer</h3>
+        <p>
+          The layer that brings together monitoring, data, models, analytics, AI tools,
+          institutional knowledge, and communication. It helps interpret system behavior,
+          evaluate options, and support adaptive planning and operations.
+        </p>
+        <div class="card-pills">
+          <span class="card-pill">Data &amp; models</span>
+          <span class="card-pill">AI &amp; decision support</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Interaction & scales -->
+  <section class="section">
+    <h2>Interactions Across Scales</h2>
+    <p>
+      The GGBI Framework is particularly useful for thinking about how local interventions
+      relate to larger-scale processes:
+    </p>
+    <ul>
+      <li><strong>Local scale:</strong> street and site-level stormwater, green infrastructure, and drainage systems.</li>
+      <li><strong>Neighborhood and city scale:</strong> urban flood pathways, drainage networks, storage, and combined green–grey measures.</li>
+      <li><strong>Watershed and basin scale:</strong> rainfall–runoff, river flows, sediment, and linkages to estuaries and coasts.</li>
+      <li><strong>Estuarine and coastal scale:</strong> tides, storm surge, waves, wetlands, channels, and coastal protection.</li>
+    </ul>
+    <p>
+      The Intelligent layer can support each scale by providing monitoring, modeling, analysis,
+      and communication tools that help connect observations, understanding, and decisions.
+    </p>
+  </section>
+
+  <!-- How this page fits in the site -->
+  <section class="section">
+    <h2>How This Framework Is Used on This Site</h2>
+    <p>
+      On this website, the GGBI Framework serves as a central organizing idea for research,
+      teaching, and applications in water and urban environments. It does not replace existing
+      models or methods; instead, it provides a way to situate them within a broader context.
+    </p>
+    <p>
+      Other sections of the site draw on the four domains to:
+    </p>
+    <ul>
+      <li>Summarize research on stormwater, watersheds, estuaries, and coasts.</li>
+      <li>Describe applications such as flood resilience, climate adaptation, and nature-based solutions.</li>
+      <li>Highlight teaching materials and conceptual diagrams used in graduate and undergraduate courses.</li>
+    </ul>
+
+    <div class="note-box">
+      Readers can start with the domain that is most familiar (for example, Green infrastructure
+      or Blue environments) and then explore how it connects to the others. Over time, the
+      framework can help build an integrated view of water and urban resilience.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
