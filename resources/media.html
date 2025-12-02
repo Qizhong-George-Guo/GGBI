@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media &amp; Outreach – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Media, outreach, and communication materials related to the Green–Grey–Blue–Intelligent (GGBI) Framework, including interviews, presentations, webinars, graphics, and public-facing explanations." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #16a34a;      /* green accent for outreach/impact */
+      --accent-soft: #dcfce7;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.4rem);
+      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 46rem;
+      margin: 0 0 0.8rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background-color: var(--accent-soft);
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-top: 2.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    .grid {
+      display: grid;
+      gap: 1.15rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background-color: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 0.9rem;
+      padding: 1rem 1.2rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .media-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .media-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .media-details {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .media-link {
+      display: inline-block;
+      margin-top: 0.25rem;
+      font-size: 0.85rem;
+    }
+
+    .note-box {
+      margin-top: 1.1rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: #dcfce7;
+      border: 1px solid #bbf7d0;
+      font-size: 0.9rem;
+      color: #166534;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.7rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/" class="active">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <a href="/resources/">Resources</a> &raquo;
+    <span>Media &amp; Outreach</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Media &amp; Outreach</div>
+    <h1 class="hero-title">Media, Outreach &amp; Public Communication</h1>
+    <p class="hero-subtitle">
+      Media and outreach materials related to the Green–Grey–Blue–Intelligent (GGBI)
+      Framework and to broader topics in stormwater, flooding, estuaries, coasts, and
+      resilience. This includes interviews, invited presentations, webinars, graphics,
+      and public-facing explanations that help connect technical work with wider
+      audiences.
+    </p>
+    <div class="pill-row">
+      <span class="pill">Interviews</span>
+      <span class="pill">Invited talks</span>
+      <span class="pill">Webinars</span>
+      <span class="pill">Graphics</span>
+      <span class="pill">Public summaries</span>
+      <span class="pill">Educational videos</span>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <h2>Purpose of This Section</h2>
+    <p>
+      The goal of this page is to highlight how ideas from the GGBI Framework, and from
+      related research and teaching, have been shared outside traditional journals and
+      technical reports. These materials support knowledge exchange across disciplines
+      and communities, including:
+    </p>
+    <ul>
+      <li>Public agencies and practitioners.</li>
+      <li>Students and educators.</li>
+      <li>Community groups and NGOs.</li>
+      <li>Media and general audiences.</li>
+    </ul>
+    <p>
+      Over time, links to selected media pieces, presentations, and graphics can be added
+      here as they are prepared for sharing.
+    </p>
+  </section>
+
+  <!-- Types of media -->
+  <section class="section">
+    <h2>Types of Media &amp; Outreach Materials</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Interviews &amp; Articles</h3>
+        <p>
+          News interviews, magazine pieces, and written Q&amp;A articles related to
+          flooding, green infrastructure, coastal resilience, and integrated planning.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Invited Talks &amp; Webinars</h3>
+        <p>
+          Presentations to universities, professional societies, agencies, and other
+          organizations on topics aligned with the GGBI Framework.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Graphics &amp; Conceptual Figures</h3>
+        <p>
+          Diagrams and illustrations used in presentations, classes, and online posts to
+          convey core ideas about Green, Grey, Blue, and Intelligent elements.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Short Videos &amp; Audio Clips</h3>
+        <p>
+          Brief explanations of key concepts, such as green infrastructure, storm surge,
+          estuarine processes, and compound flooding, produced with conventional or
+          AI-assisted tools.
+        </p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      Some media items may be hosted on external platforms (e.g., university pages,
+      professional societies, or video platforms). Where possible, stable links will be
+      provided.
+    </div>
+  </section>
+
+  <!-- Example/placeholder items -->
+  <section class="section">
+    <h2>Representative Media Items</h2>
+    <p>
+      (*Placeholders below — you can substitute real items and links over time.*)
+    </p>
+
+    <div class="media-item">
+      <div class="media-title">Example: Interview on Urban Flooding and Green Infrastructure</div>
+      <div class="media-details">
+        Regional news outlet · Year · Discussion of stormwater, GI, and flood resilience.
+      </div>
+      <a class="media-link" href="#" onclick="return false;">View article →</a>
+    </div>
+
+    <div class="media-item">
+      <div class="media-title">Example: Invited Webinar on Coastal Resilience and GGBI</div>
+      <div class="media-details">
+        Professional society webinar · Year · Presentation on integrating Green, Grey,
+        Blue, and Intelligent elements for coastal protection.
+      </div>
+      <a class="media-link" href="#" onclick="return false;">Watch recording →</a>
+    </div>
+
+    <div class="media-item">
+      <div class="media-title">Example: Short Educational Video on Storm Surge and Tides</div>
+      <div class="media-details">
+        Educational video · Year · Overview of storm surge processes and coastal flooding,
+        based on Coastal Engineering teaching materials.
+      </div>
+      <a class="media-link" href="#" onclick="return false;">View video →</a>
+    </div>
+
+    <div class="media-item">
+      <div class="media-title">Example: Graphic Explaining the GGBI Framework</div>
+      <div class="media-details">
+        Conceptual diagram · Year · Four-domain representation of Green, Grey, Blue, and
+        Intelligent layers and their interactions.
+      </div>
+      <a class="media-link" href="#" onclick="return false;">View graphic →</a>
+    </div>
+  </section>
+
+  <!-- Related resource categories -->
+  <section class="section">
+    <h2>Related Resource Categories</h2>
+    <ul>
+      <li><a href="/resources/publications.html">Publications</a></li>
+      <li><a href="/resources/technical-reports.html">Technical reports</a></li>
+      <li><a href="/resources/teaching.html">Teaching materials</a></li>
+      <li><a href="/resources/tools-data.html">Data, tools &amp; models</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
