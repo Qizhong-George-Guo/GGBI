@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact – GGBI Framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description"
+        content="Contact information for questions or comments related to the Green–Grey–Blue–Intelligent (GGBI) Framework and associated research, teaching, and applications." />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --bg-alt: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --accent: #2563eb;      /* blue accent for contact/action */
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --max-width: 960px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background-color: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .brand span:last-child {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { font-size: 0.9rem; color: var(--muted); }
+    nav a.active { color: #2563eb; font-weight: 600; }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .breadcrumbs {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .breadcrumbs a { color: #2563eb; }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.4rem);
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 46rem;
+      margin: 0 0 1rem;
+    }
+
+    .section {
+      margin-top: 2.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section p,
+    .section ul {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    li { margin-bottom: 0.35rem; }
+
+    .contact-box {
+      background-color: var(--bg-alt);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 1.1rem 1.3rem;
+      max-width: 480px;
+    }
+
+    .contact-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .note-box {
+      margin-top: 1.2rem;
+      padding: 0.8rem 0.95rem;
+      border-radius: 0.75rem;
+      background-color: var(--accent-soft);
+      border: 1px solid #bfdbfe;
+      font-size: 0.9rem;
+      color: #1d4ed8;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--bg-alt);
+      margin-top: 1.8rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 720px) {
+      header { position: static; }
+      .nav-shell { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-shell">
+    <div class="brand">
+      <span>GGBI</span>
+      <span>Green–Grey–Blue–Intelligent Framework</span>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/framework/">Framework</a>
+      <a href="/applications/">Applications</a>
+      <a href="/resources/">Resources</a>
+      <a href="/about/">About</a>
+      <a href="/contact/" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="breadcrumbs">
+    <a href="/">Home</a> &raquo;
+    <span>Contact</span>
+  </div>
+
+  <!-- Hero -->
+  <section>
+    <div class="hero-eyebrow">Contact</div>
+    <h1 class="hero-title">Contact &amp; Inquiries</h1>
+    <p class="hero-subtitle">
+      For questions, comments, or ideas related to the Green–Grey–Blue–Intelligent (GGBI)
+      Framework, publications, teaching materials, or applications, you may reach
+      Professor Qizhong (George) Guo through the contact information below.
+    </p>
+  </section>
+
+  <!-- Primary contact info -->
+  <section class="section">
+    <h2>Primary Contact</h2>
+
+    <div class="contact-box">
+      <div class="contact-label">Name</div>
+      <div class="contact-value">
+        Professor Qizhong (George) Guo
+      </div>
+
+      <div class="contact-label" style="margin-top:0.75rem;">Affiliation</div>
+      <div class="contact-value">
+        Department of Civil &amp; Environmental Engineering<br />
+        Rutgers University–New Brunswick<br />
+        New Jersey, U.S.A.
+      </div>
+
+      <div class="contact-label" style="margin-top:0.75rem;">Email</div>
+      <div class="contact-value">
+        qguo@rutgers.edu
+      </div>
+    </div>
+
+    <div class="note-box">
+      For formal academic or administrative matters, please use institutional contact
+      channels provided by Rutgers University. This site focuses on the conceptual and
+      educational aspects of the GGBI Framework.
+    </div>
+  </section>
+
+  <!-- Optional guidance -->
+  <section class="section">
+    <h2>Typical Reasons to Get in Touch</h2>
+    <ul>
+      <li>Questions about the GGBI Framework and its Green, Grey, Blue, and Intelligent domains.</li>
+      <li>Interest in teaching materials, example problems, or figures related to courses.</li>
+      <li>Inquiries about publications, technical reports, or case studies referenced on this site.</li>
+      <li>Discussion of potential collaborations or knowledge exchange on flood resilience, green infrastructure, estuaries, or coastal processes.</li>
+    </ul>
+    <p>
+      Response times may vary depending on teaching, research, and other professional
+      commitments.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>© 2025 GGBI – Green–Grey–Blue–Intelligent Framework</div>
+    <div>Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+</body>
+</html>
