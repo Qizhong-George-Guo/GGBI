@@ -238,6 +238,30 @@
   width: auto;       /* Keep aspect ratio */
   vertical-align: middle;
 }
+
+/* === GGBI Framework Icon Placement === */
+.ggbi-icon {
+  grid-column: 2 / 3;        /* right column */
+  grid-row: 3 / 4;           /* below grey & blue */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.ggbi-icon img {
+  width: 140px;              /* adjust size here */
+  max-width: 100%;
+  opacity: 0.9;
+  animation: ggbi-float 8s ease-in-out infinite;
+}
+
+/* subtle, professional animation */
+@keyframes ggbi-float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
     
   </style>
 </head>
@@ -353,6 +377,11 @@
         </div>
       </a>
     </div>
+
+  <div class="ggbi-icon">
+      <img src="../favicon.png" alt="GGBI Framework Icon">
+  </div>
+    
   </section>
 
   <!-- Interaction & scales -->
