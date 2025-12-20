@@ -326,7 +326,12 @@
 @media (prefers-reduced-motion: reduce){
   .hero-icon{ animation: none; transition: none; }
 }
- 
+
+    .hero-title a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
     
   </style>
 </head>
@@ -353,12 +358,14 @@
   <!-- Hero -->
   <section>
     <div class="hero-eyebrow">GGBI Framework</div>
-    
-<h1 class="hero-title hero-title--with-icon">
+
+  <h1 class="hero-title hero-title--with-icon"> 
   Green–Grey–Blue–Intelligent (GGBI) Framework
-  <img class="hero-icon" src="/favicon.svg" alt="GGBI icon" />
+  <a href="/framework/" aria-label="Go to GGBI Framework page">
+    <img class="hero-icon" src="/favicon.svg" alt="GGBI icon" />
+  </a>
 </h1>
-   
+     
     <p class="hero-subtitle">
      A practical framework that integrates ecological, engineered, aquatic, and intelligent
      infrastructure to support resilience across water and urban systems.
