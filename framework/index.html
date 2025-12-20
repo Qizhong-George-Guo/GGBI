@@ -239,30 +239,41 @@
   vertical-align: middle;
 }
 
-/* === GGBI Framework Icon Placement === */
-.ggbi-icon {
-  grid-column: 2 / 3;        /* right column */
-  grid-row: 3 / 4;           /* below grey & blue */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.5rem;
+.grid-with-icon {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center; /* vertical alignment with Intelligent box */
 }
 
-.ggbi-icon img {
-  width: 140px;              /* adjust size here */
+/* Icon container */
+.framework-icon img {
+  width: 180px;        /* adjust size here if needed */
   max-width: 100%;
-  opacity: 0.9;
-  animation: ggbi-float 8s ease-in-out infinite;
+  opacity: 0.95;
+  animation: subtleFloat 6s ease-in-out infinite;
 }
 
-/* subtle, professional animation */
-@keyframes ggbi-float {
+/* Subtle animation */
+@keyframes subtleFloat {
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-8px); }
+  50%  { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
-    
+
+/* Mobile: stack icon below cards */
+@media (max-width: 900px) {
+  .grid-with-icon {
+    grid-template-columns: 1fr;
+  }
+
+  .framework-icon {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+}
+
+   
   </style>
 </head>
 
@@ -310,17 +321,16 @@
   <!-- Four domains explanation -->
   <section class="section">
 
-      <h2 class="section-title-with-icon">
-      The Four Domains
-      <img src="favicon.png" alt="GGBI icon" class="heading-icon">
-      </h2>
+    <h2>The Four Domains</h2>
 
     <p>
       Each domain represents a different way in which water, infrastructure, and environments
       interact. In practice, they overlap and must be considered together.
     </p>
 
+ <div class="grid-with-icon">
     <div class="grid">
+
       <!-- Green -->
       <a class="card" href="/framework/green/">
         <h3>Green Infrastructure</h3>
@@ -376,11 +386,12 @@
           <span class="card-pill">AI &amp; decision support</span>
         </div>
       </a>
-    </div>
 
-  <div class="ggbi-icon">
-      <img src="../favicon.png" alt="GGBI Framework Icon">
-  </div>
+        <!-- GGBI icon aligned with Intelligent Infrastructure -->
+    <div class="framework-icon">
+      <img src="favicon.png" alt="GGBI framework icon">
+     </div>
+   </div>
     
   </section>
 
