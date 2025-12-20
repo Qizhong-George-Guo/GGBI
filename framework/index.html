@@ -239,40 +239,53 @@
   vertical-align: middle;
 }
 
-.grid-with-icon {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2rem;
-  align-items: center; /* vertical alignment with Intelligent box */
+/* Anchor icon to Intelligent card (no extra "5th card") */
+.intelligent-card {
+  position: relative;   /* establishes positioning context for the icon */
+  overflow: visible;    /* allow icon to extend outside card */
 }
 
-/* Icon container */
-.framework-icon img {
-  width: 180px;        /* adjust size here if needed */
-  max-width: 100%;
+/* Icon positioned into the empty space to the right */
+.intelligent-icon {
+  position: absolute;
+  right: -210px;        /* pushes icon into the empty area; adjust if needed */
+  top: 50%;             /* vertically center relative to the card */
+  transform: translateY(-50%);
+
+  width: 180px;         /* icon size */
+  height: auto;
   opacity: 0.95;
+
   animation: subtleFloat 6s ease-in-out infinite;
+  pointer-events: none; /* avoids interfering with clicking the card */
 }
 
 /* Subtle animation */
 @keyframes subtleFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+  0%   { transform: translateY(-50%) translateY(0); }
+  50%  { transform: translateY(-50%) translateY(-6px); }
+  100% { transform: translateY(-50%) translateY(0); }
 }
 
-/* Mobile: stack icon below cards */
+/* Responsive: keep icon from overflowing on small screens */
 @media (max-width: 900px) {
-  .grid-with-icon {
-    grid-template-columns: 1fr;
+  .intelligent-icon {
+    position: static;
+    display: block;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+    animation: subtleFloatMobile 6s ease-in-out infinite;
   }
 
-  .framework-icon {
-    text-align: center;
-    margin-top: 1.5rem;
+  @keyframes subtleFloatMobile {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
   }
 }
-
+   
    
   </style>
 </head>
@@ -374,7 +387,10 @@
       </a>
 
       <!-- Intelligent -->
-      <a class="card" href="/framework/intelligent/">
+      
+      <a class="card intelligent-card" href="/framework/intelligent/">
+
+        
         <h3>Intelligent Infrastructure &amp; Layer</h3>
         <p>
           The layer that brings together monitoring, data, models, analytics, AI tools,
@@ -385,14 +401,15 @@
           <span class="card-pill">Data &amp; models</span>
           <span class="card-pill">AI &amp; decision support</span>
         </div>
-      </a>
+     
 
         <!-- GGBI icon aligned with Intelligent Infrastructure -->
-    <div class="framework-icon">
-      <img src="favicon.png" alt="GGBI framework icon">
-     </div>
-   </div>
     
+   </div>
+
+<img src="favicon.png" alt="GGBI icon" class="intelligent-icon">
+ </a>
+   
   </section>
 
   <!-- Interaction & scales -->
