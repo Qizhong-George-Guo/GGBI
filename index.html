@@ -351,7 +351,60 @@
   white-space: nowrap;
   margin-top: 0.2rem;
 }
-         
+
+/* Chinese summary block */
+.lang-summary{
+  margin-top: 1.4rem;
+  padding: 1rem 1.1rem;
+  border-radius: 0.9rem;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+}
+
+.lang-summary details{
+  border-radius: 0.75rem;
+}
+
+.lang-summary summary{
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.lang-summary summary::-webkit-details-marker{ display:none; }
+
+.lang-tag{
+  font-size: 0.75rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background-color: #f9fafb;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.lang-summary .zh-body{
+  margin-top: 0.85rem;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.lang-summary .zh-body p{
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+.lang-summary .zh-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.35rem;
+}
+  
   </style>
 </head>
 
@@ -369,6 +422,7 @@
       <a href="/resources/">Resources</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact</a>
+      <a href="#zh-summary">Chinese Summary (中文摘要)</a>
     </nav>
   </div>
 </header>
@@ -530,6 +584,42 @@
 </div>
    
   </section>
+
+<section id="zh-summary" class="section lang-summary" aria-label="Chinese Summary">
+  <details>
+    <summary>
+      中文摘要
+      <span class="lang-tag">简要介绍</span>
+      <span class="lang-tag">Chinese</span>
+    </summary>
+
+    <div class="zh-body" lang="zh-Hans">
+      <p>
+        <strong>GGBI（Green–Grey–Blue–Intelligent）Framework 绿-灰-蓝-智框架</strong>是一种面向城市与流域水系统的综合性思维结构，
+        强调<strong>绿色基础设施</strong>（生态与自然基解决方案）、<strong>灰色基础设施</strong>（工程与管网系统）、
+        <strong>蓝色系统</strong>（河流、河口与海岸等水体过程），以及<strong>智能层</strong>（数据、模型、AI 工具、制度与社会协同）
+        的耦合与联动。
+      </p>
+
+      <p>
+        该框架并非单一模型或工具，而是用于组织复杂问题、连接多尺度过程、并设计“组合式方案”的方法，
+        适用于城市雨洪管理、海绵城市与低影响开发、流域规划、河口海岸韧性、以及多灾种洪涝风险治理等场景。
+      </p>
+
+      <div class="zh-links">
+        <a class="card-pill" href="/framework/">进入框架页面</a>
+        <a class="card-pill" href="/applications/">查看应用场景</a>
+        <a class="card-pill" href="/resources/">资源与成果</a>
+      </div>
+
+      <p style="margin-top:0.75rem;">
+        <em>提示：如需更系统的中文介绍，后续可扩展为独立的 <code>/zh/</code> 页面，并与英文页面互相链接。</em>
+      </p>
+    </div>
+  </details>
+</section>
+
+  
 </main>
 
 <footer>
